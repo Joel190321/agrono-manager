@@ -29,14 +29,15 @@ export default function Home() {
         className="w-full max-w-md p-8 space-y-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg"
       >
         <div className="flex flex-col items-center space-y-2">
-          <motion.div
+          {/* <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
             className="flex items-center justify-center w-16 h-16 bg-green-600 rounded-full"
           >
             <Leaf className="w-8 h-8 text-white" />
-          </motion.div>
+          </motion.div> */}
+          <img src="/logoFinal.png" alt="logo" className="w-20 h-20" />
           <h1 className="text-2xl font-bold text-center text-gray-900 dark:text-white">
             Asociación Frente Agrícola del Municipio de PUÑAL R.D.
           </h1>

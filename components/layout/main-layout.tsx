@@ -85,7 +85,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
             >
               {sidebarOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
-            <Leaf className="h-8 w-8 text-green-600" />
+            <img src="/logoFinal.png" alt="logo" className="w-20 h-20" />
             <div>
               <h1 className="text-xl font-bold text-gray-900 dark:text-white">
                 Asociación Frente Agrícola del Municipio de PUÑAL R.D.

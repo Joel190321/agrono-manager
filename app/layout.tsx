@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 export const metadata = {
   title: "Asociación Frente Agrícola - PUÑAL R.D.",
   description: "Sistema de gestión para la Asociación Frente Agrícola del Municipio de PUÑAL R.D.",
-    generator: 'v0.dev'
+   
 }
 
 export default function RootLayout({
