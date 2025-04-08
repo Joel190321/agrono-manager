@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { collection, addDoc } from "firebase/firestore"
+import { collection, addDoc, query, where, getDocs } from "firebase/firestore"
 import { db } from "@/lib/firebase"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -25,6 +25,20 @@ export default function DirectImport() {
   const [success, setSuccess] = useState(false)
   const { toast } = useToast()
 
+  // Función para verificar si el asociado ya existe
+  const checkIfAsociadoExists = async () => {
+    // Si no hay cédula, no podemos verificar duplicados por ese campo
+    if (!cedula) return false
+
+    const asociadosRef = collection(db, "asociados")
+
+    // Buscar por cédula, que debería ser un identificador único
+    const q = query(asociadosRef, where("cedula", "==", cedula))
+    const querySnapshot = await getDocs(q)
+
+    return !querySnapshot.empty
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -41,6 +55,20 @@ export default function DirectImport() {
     setSuccess(false)
 
     try {
+      // Verificar si el asociado ya existe (si tiene cédula)
+      if (cedula) {
+        const exists = await checkIfAsociadoExists()
+        if (exists) {
+          toast({
+            title: "Duplicado",
+            description: "Ya existe un asociado con esta cédula",
+            variant: "destructive",
+          })
+          setLoading(false)
+          return
+        }
+      }
+
       // Crear objeto con los datos
       const asociado = {
         nombre,
@@ -51,12 +79,12 @@ export default function DirectImport() {
         sectorBarrio,
         cantidadTareas,
         criaAnimales,
+        createdAt: new Date(),
       }
 
       // Guardar en Firebase
       await addDoc(collection(db, "asociados"), asociado)
 
-      // Mostrar mensaje de éxito
       toast({
         title: "Éxito",
         description: "Asociado agregado correctamente",
@@ -160,4 +188,3 @@ export default function DirectImport() {
     </Card>
   )
 }
-
