@@ -1,9 +1,8 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect } from "react"
-import { collection, addDoc, doc, updateDoc } from "firebase/firestore"
+import { collection, addDoc, doc, updateDoc, getDocs, query, where } from "firebase/firestore"
 import { db } from "@/lib/firebase"
 import { motion } from "framer-motion"
 import { Save } from "lucide-react"
@@ -29,6 +28,7 @@ export default function AsociadoForm({ onSuccess, asociado }: AsociadoFormProps)
     cantidadTareas: "",
     criaAnimales: "",
   })
+
   const [loading, setLoading] = useState(false)
   const { toast } = useToast()
 
@@ -57,22 +57,39 @@ export default function AsociadoForm({ onSuccess, asociado }: AsociadoFormProps)
     setLoading(true)
 
     try {
-      if (asociado?.id) {
-        // Update existing asociado
+      // Si es un nuevo asociado (no tiene ID)
+      if (!asociado?.id) {
+        // Verificar si ya existe una cédula registrada
+        const q = query(collection(db, "asociados"), where("cedula", "==", formData.cedula))
+        const querySnapshot = await getDocs(q)
+
+        if (!querySnapshot.empty) {
+          toast({
+            title: "Duplicado",
+            description: "Ya existe un asociado con esta cédula",
+            variant: "destructive",
+          })
+          setLoading(false)
+          return
+        }
+
+        // Crear nuevo asociado
+        await addDoc(collection(db, "asociados"), formData)
+        toast({
+          title: "Éxito",
+          description: "Asociado agregado correctamente",
+        })
+
+      } else {
+        // Actualizar un asociado existente
         const asociadoRef = doc(db, "asociados", asociado.id)
         await updateDoc(asociadoRef, formData)
         toast({
           title: "Éxito",
           description: "Asociado actualizado correctamente",
         })
-      } else {
-        // Add new asociado
-        await addDoc(collection(db, "asociados"), formData)
-        toast({
-          title: "Éxito",
-          description: "Asociado agregado correctamente",
-        })
       }
+
       onSuccess()
     } catch (error) {
       console.error("Error al guardar asociado:", error)
@@ -155,4 +172,3 @@ export default function AsociadoForm({ onSuccess, asociado }: AsociadoFormProps)
     </motion.form>
   )
 }
-
