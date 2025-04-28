@@ -154,6 +154,11 @@ export default function SidebarNavigation() {
           icon: <Globe className="h-4 w-4" />,
         },
         {
+          title: "Informatica",
+          href: "/directiva/relaciones-publicas",
+          icon: <Globe className="h-4 w-4" />,
+        },
+        {
           title: "Disciplina",
           href: "/directiva/disciplina",
           icon: <Shield className="h-4 w-4" />,
