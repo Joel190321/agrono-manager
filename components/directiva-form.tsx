@@ -35,6 +35,7 @@ const cargosDirectiva = [
   { id: "relaciones-publicas", nombre: "Secretario de Relaciones Públicas" },
   { id: "disciplina", nombre: "Secretario de Disciplina" },
   { id: "secretario-salud", nombre: "Secretario de Salud" },
+  { id: "informatica", nombre: "Informatica"},
 ]
 
 export default function DirectivaForm({ onSuccess, miembro }: DirectivaFormProps) {
