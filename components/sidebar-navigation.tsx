@@ -26,6 +26,7 @@ import {
   Shield,
   Heart,
   UserCog,
+  laptop,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -155,8 +156,8 @@ export default function SidebarNavigation() {
         },
         {
           title: "Informatica",
-          href: "/directiva/relaciones-publicas",
-          icon: <Globe className="h-4 w-4" />,
+          href: "/directiva/informatica",
+          icon: <Laptop className="h-4 w-4" />,
         },
         {
           title: "Disciplina",
