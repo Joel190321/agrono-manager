@@ -115,6 +115,16 @@ export default function SidebarNavigation() {
           icon: <UserCheck className="h-4 w-4" />,
         },
         {
+          title: "Secretario de Organizacion",
+          href: "/directiva/secretario-organizacion",
+          icon: <UserCheck className="h-4 w-4" />,
+        },
+        {
+          title: "Secretario de Deporte",
+          href: "/directiva/secretario-deporte",
+          icon: <UserCheck className="h-4 w-4" />
+        }
+        {
           title: "Secretario General",
           href: "/directiva/secretario-general",
           icon: <BookOpen className="h-4 w-4" />,
