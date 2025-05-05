@@ -18,13 +18,14 @@ const cargosMap: Record<string, string> = {
   "secretario-finanzas": "Secretario de Finanzas",
   "secretario-organizacion": "Secretario de Organizacion",
   "secretario-deporte": "Secretario de Deporte",
+  "secretario-educacion": "Secretario de Educacion",
   "primer-vocal": "Primer Vocal",
   "informatica": "Informatica",
   "prensa-propaganda": "Secretario de Prensa y Propaganda",
   medioambiente: "Secretario de Medioambiente",
   "relaciones-publicas": "Secretario de Relaciones Públicas",
   disciplina: "Secretario de Disciplina",
-  "secretario-educacion": "Secretario de Educacion",
+  
 }
 
 export default function DirectivaCargoPage() {
