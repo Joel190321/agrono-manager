@@ -24,7 +24,7 @@ const cargosMap: Record<string, string> = {
   medioambiente: "Secretario de Medioambiente",
   "relaciones-publicas": "Secretario de Relaciones Públicas",
   disciplina: "Secretario de Disciplina",
-  "secretario-salud": "Secretario de Salud",
+  "secretario-educacion": "Secretario de Educacion",
 }
 
 export default function DirectivaCargoPage() {
