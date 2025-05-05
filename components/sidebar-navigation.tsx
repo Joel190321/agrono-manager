@@ -123,7 +123,7 @@ export default function SidebarNavigation() {
           title: "Secretario de Deporte",
           href: "/directiva/secretario-deporte",
           icon: <UserCheck className="h-4 w-4" />
-        }
+        },
         {
           title: "Secretario General",
           href: "/directiva/secretario-general",
