@@ -175,8 +175,8 @@ export default function SidebarNavigation() {
           icon: <Shield className="h-4 w-4" />,
         },
         {
-          title: "Secretario de Salud",
-          href: "/directiva/secretario-salud",
+          title: "Secretario de Educacion",
+          href: "/directiva/secretario-educacion",
           icon: <Heart className="h-4 w-4" />,
         },
       ],
