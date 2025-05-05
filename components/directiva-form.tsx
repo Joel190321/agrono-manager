@@ -34,7 +34,7 @@ const cargosDirectiva = [
   { id: "medioambiente", nombre: "Secretario de Medioambiente" },
   { id: "relaciones-publicas", nombre: "Secretario de Relaciones Públicas" },
   { id: "disciplina", nombre: "Secretario de Disciplina" },
-  { id: "secretario-salud", nombre: "Secretario de Salud" },
+  { id: "secretario-educacion", nombre: "Secretario de Educacion" },
   { id: "informatica", nombre: "Informatica"},
 ]
 
