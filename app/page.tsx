@@ -39,7 +39,7 @@ export default function Home() {
           </motion.div> */}
           <img src="/logoFinal.png" alt="logo" className="w-20 h-20" />
           <h1 className="text-2xl font-bold text-center text-gray-900 dark:text-white">
-            Asociación Frente Agrícola del Municipio de PUÑAL R.D.
+            Federacion Frente Agrícola del Municipio de PUÑAL R.D.
           </h1>
           <p className="text-sm text-center text-gray-600 dark:text-gray-400">Regional Norte Zona Sur</p>
           <p className="text-xs text-center text-gray-500 dark:text-gray-500">Fundado (12/02/2021)</p>
