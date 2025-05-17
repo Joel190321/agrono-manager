@@ -90,7 +90,7 @@ export default function Dashboard() {
           <Card>
             <CardHeader>
               <CardTitle>Bienvenido al Sistema de Gestión</CardTitle>
-              <CardDescription>Asociación Frente Agrícola del Municipio de PUÑAL R.D.</CardDescription>
+              <CardDescription>Federacion Frente Agrícola del Municipio de PUÑAL R.D.</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600 dark:text-gray-400">
